@@ -5,20 +5,20 @@
 		</div>
 		<ul class="navbar-nav">
 			<li>
-				<a routerLink="/welcome/sudeep" class="nav-link">Home</a>
+				<a routerLink="/welcome/sudeep" class="nav-link" *ngIf="hardCodedAuthenticationService.isUserLoggedIn()">Home</a>
 			</li>
 			<li>
-				<a routerLink="/todos" class="nav-link">Todos</a>
+				<a routerLink="/todos" class="nav-link" *ngIf="hardCodedAuthenticationService.isUserLoggedIn()">Todos</a>
 			</li>
 		</ul>
 
 
     		<ul class="navbar-nav navbar-collapse justify-content-end">
 			<li>
-				<a routerLink="/login" class="nav-link">Login</a>
+				<a routerLink="/login" class="nav-link" *ngIf="!hardCodedAuthenticationService.isUserLoggedIn()">Login</a>
 			</li>
 			<li>
-				<a routerLink="/logot " class="nav-link">Logout</a>
+				<a routerLink="/logout" class="nav-link" *ngIf="hardCodedAuthenticationService.isUserLoggedIn()">Logout</a>
 			</li>
 		</ul>
 
